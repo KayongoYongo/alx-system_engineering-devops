@@ -1,2 +1,0 @@
-#!/bin/bash
-find $PATH -type d -not -name '.*' | wc -l
