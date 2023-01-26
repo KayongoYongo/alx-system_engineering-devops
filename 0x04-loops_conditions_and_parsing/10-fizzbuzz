@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script is displaying 1 to 100 
+# if its divisible by 3, prints fizz
+# if its divisible by 5, prints buzz
+# if its divisible by 3 and 5, prints fizzbuzz
+counter=1
+
+while [ $counter -le 100 ]
+do
+	if [ $((counter % 3)) == 0 ] && [ $((counter % 5)) != 0 ]; then
+	  	echo "Fizz"
+	elif [ $((counter % 3 )) != 0 ] && [ $((counter % 5)) == 0 ]; then
+		echo "Buzz"
+	elif [ $((counter % 3 )) == 0 ] && [ $((counter % 5 )) == 0 ]; then
+		echo "FizzBuzz"
+	else
+		echo $counter
+	fi
+	((counter++))
+done
