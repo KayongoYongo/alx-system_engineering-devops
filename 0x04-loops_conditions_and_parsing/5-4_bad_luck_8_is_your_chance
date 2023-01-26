@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times, use if in the 4th and 8th
+counter=1
+
+while [ $counter -lt 11 ]
+do
+	if [ $counter == 4 ]; then
+	  	echo "bad luck"
+	elif [ $counter == 8 ]; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((counter++))
+done
