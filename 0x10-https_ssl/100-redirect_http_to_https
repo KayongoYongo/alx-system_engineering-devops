@@ -34,9 +34,10 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 frontend www-http
-        bind *:80
-        redirect scheme https code 301 if !{ ssl_fc }
-        default_backend nodes
+    bind   0.0.0.0:80
+    reqadd X-Forwarded-Proto:\ http
+    default_backend www-backend
+    redirect scheme https code 301 if !{ ssl_fc }
 
 frontend www-https
         bind *:443 ssl crt /etc/haproxy/ssl/www.kayongoyongocodes.tech.pem
