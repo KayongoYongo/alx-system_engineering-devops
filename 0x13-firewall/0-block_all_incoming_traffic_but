@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Configures a ufw firewall to block all incoming traffic
 # Except for TCP ports 22, 443 and 80.
 
