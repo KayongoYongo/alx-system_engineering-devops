@@ -1,0 +1,17 @@
+#!/usr/bin env bash
+
+# Stop Nginx
+service nginx stop
+
+# Stop apache
+sudo pkill apache2
+
+# Modify config files
+sudo sed -i 's/#user www-data;/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -i "s/80 default_server/8080 default_server/" /etc/nginx/sites-enabled/default
+
+# Modify file permissions
+chmod 644 /etc/nginx/nginx.conf
+
+# Restart Nginx
+sudo -u nginx service nginx start
