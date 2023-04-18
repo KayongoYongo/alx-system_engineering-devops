@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Run Nginx as nginx
 # Stop Nginx
 service nginx stop
 
