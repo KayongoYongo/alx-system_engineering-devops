@@ -13,7 +13,7 @@ def top_ten(subreddit):
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     try:
-        posts =  response.json().get('data').get('children')
+        posts = response.json().get('data').get('children')
 
         if response.status_code == 200:
             for post in posts[:10]:
